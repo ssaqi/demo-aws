@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - yum install -y aws-cli
+  build:
+    commands:
+      - echo "Building the application (if needed)..."
+      - echo "No build steps required for HTML files."
+  post_build:
+    commands:
+      - echo "Deploying HTML files to S3..."
+      - aws s3 cp index.html s3:your-s3-bucket-name --acl public-read
+
+artifacts:
+  files:
+    - index.html
+  discard-paths: yes
