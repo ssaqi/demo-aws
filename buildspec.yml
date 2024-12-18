@@ -12,7 +12,7 @@ phases:
   post_build:
     commands:
       - echo "Deploying HTML files to S3..."
-      - aws s3 cp index.html s3:your-s3-bucket-name --acl public-read
+      - aws s3 cp index.html s3:saqibabbas-s3-bucket-name --acl public-read
 
 artifacts:
   files:
